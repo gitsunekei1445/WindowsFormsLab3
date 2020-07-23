@@ -23,7 +23,7 @@ namespace WindowsFormsLab3
         {
             
             Lx += 1;
-            if (Lx%500 == 0)
+            if (Lx%100 == 0)
             {
                 Lx = Ran.Next(10, 500);
                 Ly = Ran.Next(10, 500);
@@ -33,14 +33,19 @@ namespace WindowsFormsLab3
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("คุณต้องการเข้าโปรเเกรมหรือไหม");
+           DialogResult Ans= MessageBox.Show("คุณต้องการเข้าโปรเเกรมหรือไหม","เเจ้งเตือน",MessageBoxButtons.YesNo);
+            if (Ans == DialogResult.Yes)
+            {
+                timer1.Enabled = false;
+                button1.Visible = true;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             
-            Lx = Ran.Next(10, 500);
-            Ly = Ran.Next(10, 500);
+            Lx = Ran.Next(10, 250);
+            Ly = Ran.Next(10, 250);
             timer1.Interval = 10;
             timer1.Enabled = true;
 
